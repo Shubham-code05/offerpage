@@ -11,6 +11,8 @@
 
   <title>Thank You — AdsTube</title>
 
+  <link rel="icon" type="image/webp" href="logo.webp" />
+
   <style>
     :root {
       --red: #ff0033;
@@ -23,6 +25,10 @@
       --border: #e9e9ee;
       --white: #fff;
       --green: #16a34a;
+
+      --saffron: #ff9933;
+      --india-green: #138808;
+      --chakra: #06038d;
 
       --shadow: 0 20px 60px rgba(15, 15, 25, 0.1);
       --radius: 22px;
@@ -68,6 +74,85 @@
       margin: auto;
     }
 
+    .tricolor-strip {
+      height: 9px;
+      width: 100%;
+
+      background: linear-gradient(
+        180deg,
+        var(--saffron) 0%,
+        var(--saffron) 33.33%,
+        #fff 33.33%,
+        #fff 66.66%,
+        var(--india-green) 66.66%,
+        var(--india-green) 100%
+      );
+    }
+
+    .independence-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+
+      padding: 7px 15px 7px 8px;
+
+      border-radius: 999px;
+
+      background: #fff;
+      border: 1.5px solid var(--saffron);
+
+      box-shadow: 0 10px 24px rgba(255, 153, 51, 0.22);
+
+      color: #a15a00;
+
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+
+      margin-bottom: 20px;
+    }
+
+    .flag-dot {
+      position: relative;
+
+      width: 24px;
+      height: 16px;
+      flex: none;
+
+      border-radius: 3px;
+      overflow: hidden;
+
+      background: linear-gradient(
+        180deg,
+        var(--saffron) 0%,
+        var(--saffron) 33.33%,
+        #fff 33.33%,
+        #fff 66.66%,
+        var(--india-green) 66.66%,
+        var(--india-green) 100%
+      );
+
+      box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.12);
+    }
+
+    .flag-dot::after {
+      content: "";
+
+      position: absolute;
+      top: 50%;
+      left: 50%;
+
+      width: 3.5px;
+      height: 3.5px;
+
+      border-radius: 50%;
+
+      background: var(--chakra);
+
+      transform: translate(-50%, -50%);
+    }
+
     /* =========================
        NAVBAR
     ========================= */
@@ -101,37 +186,10 @@
       letter-spacing: -1px;
     }
 
-    .logo-mark {
-      width: 38px;
-      height: 38px;
-
-      border-radius: 11px;
-
-      background: var(--red);
-
-      display: grid;
-      place-items: center;
-
-      color: #fff;
-
-      box-shadow: 0 8px 20px rgba(255, 0, 51, 0.22);
-    }
-
-    .logo-mark::after {
-      content: "";
-
-      width: 0;
-      height: 0;
-
-      border-top: 7px solid transparent;
-      border-bottom: 7px solid transparent;
-      border-left: 11px solid #fff;
-
-      margin-left: 3px;
-    }
-
-    .logo span {
-      color: var(--red);
+    .logo-img {
+      height: 46px;
+      width: auto;
+      display: block;
     }
 
     .nav-links {
@@ -224,13 +282,18 @@
 
       background:
         radial-gradient(
-          circle at 82% 20%,
-          rgba(255, 0, 51, 0.13),
+          circle at 82% 18%,
+          rgba(255, 153, 51, 0.16),
           transparent 27%
         ),
         radial-gradient(
-          circle at 12% 80%,
-          rgba(255, 0, 51, 0.07),
+          circle at 88% 55%,
+          rgba(255, 0, 51, 0.11),
+          transparent 25%
+        ),
+        radial-gradient(
+          circle at 10% 82%,
+          rgba(19, 136, 8, 0.12),
           transparent 25%
         ),
         #fff;
@@ -242,6 +305,9 @@
     }
 
     .thanks-box {
+      position: relative;
+      overflow: hidden;
+
       max-width: 620px;
 
       margin: auto;
@@ -257,6 +323,49 @@
       box-shadow: var(--shadow);
 
       padding: 60px 45px;
+    }
+
+    .thanks-box::before {
+      content: "";
+
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+
+      height: 8px;
+
+      background: linear-gradient(
+        180deg,
+        var(--saffron) 0%,
+        var(--saffron) 33.33%,
+        #fff 33.33%,
+        #fff 66.66%,
+        var(--india-green) 66.66%,
+        var(--india-green) 100%
+      );
+    }
+
+    .chakra-watermark {
+      position: absolute;
+      right: -35px;
+      bottom: -35px;
+
+      width: 190px;
+      height: 190px;
+
+      opacity: 0.05;
+
+      pointer-events: none;
+    }
+
+    .thanks-greeting {
+      font-weight: 700;
+      color: var(--india-green);
+
+      font-size: 15px;
+
+      margin-bottom: 6px !important;
     }
 
     .thanks-icon {
@@ -327,11 +436,34 @@
     ========================= */
 
     footer {
+      position: relative;
+
       background: #09090b;
 
       color: #fff;
 
       padding: 65px 0 25px;
+    }
+
+    footer::before {
+      content: "";
+
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+
+      height: 8px;
+
+      background: linear-gradient(
+        180deg,
+        var(--saffron) 0%,
+        var(--saffron) 33.33%,
+        #fff 33.33%,
+        #fff 66.66%,
+        var(--india-green) 66.66%,
+        var(--india-green) 100%
+      );
     }
 
     .footer-grid {
@@ -346,16 +478,10 @@
       margin-bottom: 15px;
     }
 
-    footer .logo-mark {
+    footer .logo-img {
       background: #fff;
-    }
-
-    footer .logo-mark::after {
-      border-left-color: var(--red);
-    }
-
-    footer .logo span {
-      color: #ff496b;
+      padding: 6px 10px;
+      border-radius: 8px;
     }
 
     .footer-about {
@@ -418,6 +544,8 @@
 
 <body>
 
+  <div class="tricolor-strip"></div>
+
   <!-- =========================
        NAVBAR
   ========================= -->
@@ -427,8 +555,7 @@
     <nav class="container">
 
       <a class="logo" href="index.html">
-        <span class="logo-mark"></span>
-        Ads<span>Tube</span>
+        <img src="logo.webp" alt="AdsTube" class="logo-img" />
       </a>
 
       <div class="nav-links">
@@ -462,6 +589,46 @@
 
         <div class="thanks-box">
 
+          <svg
+            class="chakra-watermark"
+            viewBox="0 0 100 100"
+            aria-hidden="true"
+          >
+            <circle cx="50" cy="50" r="46" fill="none" stroke="#06038d" stroke-width="3" />
+            <circle cx="50" cy="50" r="5" fill="#06038d" />
+            <g stroke="#06038d" stroke-width="2.2">
+              <line x1="50" y1="8" x2="50" y2="20" />
+              <line x1="50" y1="8" x2="50" y2="20" transform="rotate(15 50 50)" />
+              <line x1="50" y1="8" x2="50" y2="20" transform="rotate(30 50 50)" />
+              <line x1="50" y1="8" x2="50" y2="20" transform="rotate(45 50 50)" />
+              <line x1="50" y1="8" x2="50" y2="20" transform="rotate(60 50 50)" />
+              <line x1="50" y1="8" x2="50" y2="20" transform="rotate(75 50 50)" />
+              <line x1="50" y1="8" x2="50" y2="20" transform="rotate(90 50 50)" />
+              <line x1="50" y1="8" x2="50" y2="20" transform="rotate(105 50 50)" />
+              <line x1="50" y1="8" x2="50" y2="20" transform="rotate(120 50 50)" />
+              <line x1="50" y1="8" x2="50" y2="20" transform="rotate(135 50 50)" />
+              <line x1="50" y1="8" x2="50" y2="20" transform="rotate(150 50 50)" />
+              <line x1="50" y1="8" x2="50" y2="20" transform="rotate(165 50 50)" />
+              <line x1="50" y1="8" x2="50" y2="20" transform="rotate(180 50 50)" />
+              <line x1="50" y1="8" x2="50" y2="20" transform="rotate(195 50 50)" />
+              <line x1="50" y1="8" x2="50" y2="20" transform="rotate(210 50 50)" />
+              <line x1="50" y1="8" x2="50" y2="20" transform="rotate(225 50 50)" />
+              <line x1="50" y1="8" x2="50" y2="20" transform="rotate(240 50 50)" />
+              <line x1="50" y1="8" x2="50" y2="20" transform="rotate(255 50 50)" />
+              <line x1="50" y1="8" x2="50" y2="20" transform="rotate(270 50 50)" />
+              <line x1="50" y1="8" x2="50" y2="20" transform="rotate(285 50 50)" />
+              <line x1="50" y1="8" x2="50" y2="20" transform="rotate(300 50 50)" />
+              <line x1="50" y1="8" x2="50" y2="20" transform="rotate(315 50 50)" />
+              <line x1="50" y1="8" x2="50" y2="20" transform="rotate(330 50 50)" />
+              <line x1="50" y1="8" x2="50" y2="20" transform="rotate(345 50 50)" />
+            </g>
+          </svg>
+
+          <div class="independence-badge">
+            <i class="flag-dot"></i>
+            Independence Day Greetings
+          </div>
+
           <div class="thanks-icon">
             ✓
           </div>
@@ -470,10 +637,15 @@
             Thank You!
           </h1>
 
+          <p class="thanks-greeting">
+            🇮🇳 Wishing you and your channel a very Happy
+            Independence Day from Team AdsTube!
+          </p>
+
           <p>
             Your request has been received. One of our YouTube
             growth experts will reach out to you on WhatsApp
-            shortly with your free plan.
+            shortly with your free Freedom Fest plan.
           </p>
 
           <div class="thanks-actions">
@@ -523,9 +695,7 @@
 
           <a class="logo" href="index.html">
 
-            <span class="logo-mark"></span>
-
-            Ads<span>Tube</span>
+            <img src="logo.webp" alt="AdsTube" class="logo-img" />
 
           </a>
 
@@ -629,6 +799,31 @@
     </div>
 
   </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+
+  <script>
+
+    window.addEventListener("load", () => {
+
+      if (
+        typeof confetti !== "function" ||
+        window.matchMedia("(prefers-reduced-motion: reduce)").matches
+      ) {
+        return;
+      }
+
+      confetti({
+        particleCount: 150,
+        spread: 85,
+        startVelocity: 42,
+        origin: { y: 0.35 },
+        colors: ["#ff9933", "#ffffff", "#138808"],
+      });
+
+    });
+
+  </script>
 
 </body>
 </html>
