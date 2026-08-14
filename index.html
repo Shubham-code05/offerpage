@@ -1129,6 +1129,91 @@
     }
 
     /* =========================
+       SPECIAL OFFERS
+    ========================= */
+
+    .offers-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 28px;
+    }
+
+    .offer-card {
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+
+      background: #fff;
+
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+
+      box-shadow: var(--shadow);
+
+      transition: 0.3s;
+    }
+
+    .offer-card:hover {
+      transform: translateY(-8px);
+
+      box-shadow: 0 30px 60px rgba(15, 15, 25, 0.16);
+    }
+
+    .offer-card-media {
+      width: 100%;
+
+      aspect-ratio: 4 / 5;
+
+      overflow: hidden;
+    }
+
+    .offer-card-media img {
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+
+      display: block;
+
+      transition: transform 0.4s ease;
+    }
+
+    .offer-card:hover .offer-card-media img {
+      transform: scale(1.05);
+    }
+
+    .offer-card-body {
+      padding: 18px;
+
+      margin-top: auto;
+    }
+
+    .offer-buy-btn {
+      width: 100%;
+
+      justify-content: center;
+
+      background: linear-gradient(
+        120deg,
+        var(--red) 0%,
+        var(--red-dark) 68%,
+        var(--india-green) 100%
+      );
+
+      box-shadow:
+        0 12px 24px rgba(255, 0, 51, 0.22),
+        0 6px 16px rgba(19, 136, 8, 0.14);
+    }
+
+    .offer-buy-btn:hover {
+      transform: translateY(-2px);
+
+      box-shadow:
+        0 16px 32px rgba(255, 0, 51, 0.28),
+        0 8px 20px rgba(19, 136, 8, 0.2);
+    }
+
+    /* =========================
        SERVICES
     ========================= */
 
@@ -1341,6 +1426,53 @@
       font-size: 14px;
 
       margin-top: 6px;
+    }
+
+    .subhead-title-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .special-offer-badge {
+      display: inline-block;
+
+      padding: 6px 16px;
+
+      border-radius: 999px;
+
+      background: linear-gradient(135deg, var(--red), #ff6a00);
+
+      color: #fff;
+
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+
+      box-shadow: 0 8px 20px rgba(255, 0, 51, 0.3);
+
+      animation: badgePulse 2s ease-in-out infinite;
+    }
+
+    @keyframes badgePulse {
+      0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 8px 20px rgba(255, 0, 51, 0.3);
+      }
+
+      50% {
+        transform: scale(1.06);
+        box-shadow: 0 8px 26px rgba(255, 106, 0, 0.45);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .special-offer-badge {
+        animation: none;
+      }
     }
 
     .plan-card {
@@ -2742,6 +2874,46 @@
       margin-top: 8px;
     }
 
+    .offer-dates {
+      position: relative;
+      z-index: 1;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+
+      margin-top: 16px;
+    }
+
+    .offer-date {
+      background: rgba(255, 255, 255, 0.16);
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      border-radius: 8px;
+
+      padding: 5px 10px;
+
+      font-weight: 800;
+      font-size: 14px;
+      color: #fff;
+    }
+
+    .offer-date small {
+      font-size: 9px;
+      vertical-align: super;
+    }
+
+    .offer-date-label {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+
+      color: #ffdbe2;
+
+      margin-left: 2px;
+    }
+
     .lead-popup-form {
       padding: 26px 30px 30px;
 
@@ -2894,6 +3066,13 @@
           your channel safely this Independence Day.
         </p>
 
+        <div class="offer-dates">
+          <span class="offer-date">13<small>th</small></span>
+          <span class="offer-date">14<small>th</small></span>
+          <span class="offer-date">15<small>th</small></span>
+          <span class="offer-date-label">August</span>
+        </div>
+
       </div>
 
       <form class="lead-popup-form" id="leadPopupForm">
@@ -2969,6 +3148,8 @@
       </a>
 
       <div class="nav-links" id="navLinks">
+
+        <a href="#special-offers">Special Offers</a>
 
         <a href="#services">Services</a>
 
@@ -3571,6 +3752,157 @@
     <div class="tricolor-divider"></div>
 
     <!-- =========================
+         SPECIAL OFFERS
+    ========================= -->
+
+    <section id="special-offers" class="special-offers">
+
+      <div class="container">
+
+        <div class="section-head">
+
+          <span class="section-tag">
+            Limited Time
+          </span>
+
+          <h2>
+            Special Offers
+          </h2>
+
+          <p>
+            Exclusive YouTube Freedom Fest pricing — valid
+            13th to 15th August only.
+          </p>
+
+        </div>
+
+        <div class="offers-grid">
+
+          <div class="offer-card">
+
+            <div class="offer-card-media">
+              <img
+                src="Adstubeoffer1.jpeg"
+                alt="Independence Day Offer — Monetization Plan Without Views"
+                loading="lazy"
+              />
+            </div>
+
+            <div class="offer-card-body">
+              <a
+                class="btn offer-buy-btn"
+                href="https://wa.me/917007821741?text=Hi%20AdsTube%2C%20I%27m%20interested%20in%20the%20Monetization%20Plan%20Without%20Views%20(YouTube%20Freedom%20Fest%20Offer)."
+                target="_blank"
+                rel="noopener"
+              >
+                Buy Now →
+              </a>
+            </div>
+
+          </div>
+
+          <div class="offer-card">
+
+            <div class="offer-card-media">
+              <img
+                src="Adstubeoffer2.jpeg"
+                alt="Independence Day Offer — YouTube Monetization Plan With Views"
+                loading="lazy"
+              />
+            </div>
+
+            <div class="offer-card-body">
+              <a
+                class="btn offer-buy-btn"
+                href="https://wa.me/917007821741?text=Hi%20AdsTube%2C%20I%27m%20interested%20in%20the%20Monetization%20Plan%20With%20Views%20(YouTube%20Freedom%20Fest%20Offer)."
+                target="_blank"
+                rel="noopener"
+              >
+                Buy Now →
+              </a>
+            </div>
+
+          </div>
+
+          <div class="offer-card">
+
+            <div class="offer-card-media">
+              <img
+                src="Adstubeoffer3.jpeg"
+                alt="Independence Day Offer — Revenue Plans"
+                loading="lazy"
+              />
+            </div>
+
+            <div class="offer-card-body">
+              <a
+                class="btn offer-buy-btn"
+                href="https://wa.me/917007821741?text=Hi%20AdsTube%2C%20I%27m%20interested%20in%20the%20Revenue%20Offers%20(YouTube%20Freedom%20Fest%20Offer)."
+                target="_blank"
+                rel="noopener"
+              >
+                Buy Now →
+              </a>
+            </div>
+
+          </div>
+
+          <div class="offer-card">
+
+            <div class="offer-card-media">
+              <img
+                src="Adstubeoffer4.jpeg"
+                alt="Independence Day Offer — Special Subscribers Plan"
+                loading="lazy"
+              />
+            </div>
+
+            <div class="offer-card-body">
+              <a
+                class="btn offer-buy-btn"
+                href="https://wa.me/917007821741?text=Hi%20AdsTube%2C%20I%27m%20interested%20in%20the%20Special%20Subscribers%20Plan%20(YouTube%20Freedom%20Fest%20Offer)."
+                target="_blank"
+                rel="noopener"
+              >
+                Buy Now →
+              </a>
+            </div>
+
+          </div>
+
+          <div class="offer-card">
+
+            <div class="offer-card-media">
+              <img
+                src="Adstubeoffer5.jpeg"
+                alt="Independence Day Offer — Special Views Plan"
+                loading="lazy"
+              />
+            </div>
+
+            <div class="offer-card-body">
+              <a
+                class="btn offer-buy-btn"
+                href="https://wa.me/917007821741?text=Hi%20AdsTube%2C%20I%27m%20interested%20in%20the%20Special%20Views%20Plan%20(YouTube%20Freedom%20Fest%20Offer)."
+                target="_blank"
+                rel="noopener"
+              >
+                Buy Now →
+              </a>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <div class="tricolor-divider"></div>
+
+    <!-- =========================
          SERVICES
     ========================= -->
 
@@ -3864,9 +4196,17 @@
 
         <div class="plans-subhead-block">
 
-          <h3>
-            Watch Hours With Views
-          </h3>
+          <div class="subhead-title-row">
+
+            <h3>
+              Watch Hours With Views
+            </h3>
+
+            <span class="special-offer-badge">
+              Special Offers
+            </span>
+
+          </div>
 
           <p>
             Watch hours delivered along with views on your videos
